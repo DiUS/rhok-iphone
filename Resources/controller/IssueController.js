@@ -1,0 +1,3 @@
+rhok.controller.issueController = function() {
+	
+};
