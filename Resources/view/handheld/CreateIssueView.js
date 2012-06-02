@@ -3,7 +3,9 @@ rhok.view.createIssue = function() {
 		systemButton : Ti.UI.iPhone.SystemButton.ADD,
 		title : 'Add issue'
 	});
-	var view = Titanium.UI.createView({});
+	var view = Titanium.UI.createWindow({
+		backgroundColor : 'green'
+	});
 	view.add(createButton);
 	return view;
 }();

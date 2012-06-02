@@ -12,6 +12,11 @@ function ApplicationTabGroup(Window) {
 	var btnCreateIssue = Titanium.UI.createButton({
 	    title:'+'
 	});
+	btnCreateIssue.addEventListener('click', function() {
+		rhok.view.createIssue.open({
+			modal : true
+		});
+	});
 	 
 	win1.rightNavButton = btnCreateIssue;
 	
