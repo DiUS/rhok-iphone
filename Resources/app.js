@@ -32,10 +32,10 @@ var rhok = {};
   	rhok.model = {};
   	rhok.view = {};
 
+	Ti.include("view/handheld/views.js");
 	var Window = require('view/handheld/ApplicationWindow');
 
 	var ApplicationTabGroup = require('view/common/ApplicationTabGroup');
 	new ApplicationTabGroup(Window).open();
 })();
 
-Ti.include("view/handheld/views.js");

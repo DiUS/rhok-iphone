@@ -32,7 +32,8 @@ function ApplicationWindow(title) {
     // annotations:[mountainView]
 	});
 	
-	self.add(mapview);
+	//self.add(mapview);
+	self.add(rhok.view.createIssue);
 	
 	return self;
 };
