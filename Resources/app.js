@@ -32,8 +32,8 @@ var rhok = {};
   	rhok.model = {};
   	rhok.view = {};
 
-	Ti.include("view/handheld/views.js");
 	Ti.include("controller/controllers.js");
+	Ti.include("view/handheld/views.js");
 	var Window = require('view/handheld/ApplicationWindow');
 
 	var ApplicationTabGroup = require('view/common/ApplicationTabGroup');
