@@ -1,15 +1,26 @@
 rhok.view.map = (function () {
-  var self = {};
+ 	var self = {};
   
-  self.view = Titanium.Map.createView({
-    mapType: Titanium.Map.STANDARD_TYPE,
-    region: {latitude:33.74511, longitude:-84.38993, 
-            latitudeDelta:0.01, longitudeDelta:0.01},
-    animate:true,
-    regionFit:true,
-    userLocation:true
-    // annotations:[mountainView]
+    var region = {}
+	Ti.Geolocation.purpose = "GPS demo";
+	Titanium.Geolocation.getCurrentPosition(function position(pos) {
+		Titanium.API.info("Current position: " + pos.coords.latitude + "  " + pos.coords.longitude);
+		region = {
+	  		latitude: pos.coords.latitude,
+            longitude: pos.coords.longitude,
+            animate: true,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01
+	  	}
+	});
+  
+ 	self.view = Titanium.Map.createView({
+    	mapType: Titanium.Map.STANDARD_TYPE,
+    	animate:true,
+    	regionFit:true,
+    	userLocation:true
+    	// annotations:[mountainView]
 	});
 
-  return self;
+  	return self;
 })();

@@ -3,9 +3,10 @@ function ApplicationTabGroup(Window) {
 	var self = Ti.UI.createTabGroup();
 	
 	//create app tabs
-	var win1 = new Window(L('home')),
-		win2 = new Window(L('settings'));
+	var win1 = new Window(L('List issues')),
+		win2 = new Window(L('Map view'));
 		
+	win1.add(rhok.view.issueDetails);
 	win1.add(rhok.view.createIssue);
 	win1.add(rhok.view.listIssues);
 	win2.add(rhok.view.map.view);

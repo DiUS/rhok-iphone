@@ -9,7 +9,7 @@ rhok.view.createIssue = function() {
 	
 	createButton.addEventListener('click', function() {
 		rhok.controller.issueController.createIssue();
-		view.close();
+		rhok.view.listIssues.open();
 	});
 	
 	var cancelButton = Ti.UI.createButton({
@@ -21,11 +21,11 @@ rhok.view.createIssue = function() {
 	});
 	
 	cancelButton.addEventListener('click', function() {
-		view.close();
+		rhok.view.createIssue.close();
+		//rhok.view.listIssues.open();
 	});
 	
 	var view = Titanium.UI.createWindow({
-		backgroundColor : 'green'
 	});
 	view.add(createButton);
 	view.add(cancelButton);

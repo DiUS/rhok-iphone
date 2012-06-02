@@ -24,7 +24,6 @@ rhok.controller.issueController = function() {
 						title: issue.title
 					}));
 				}
-				Titanium.API.info("Adding issues: " + issue);
 				issueList.setData(issues);
 			}
 		);
