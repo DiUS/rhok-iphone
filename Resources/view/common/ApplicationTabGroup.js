@@ -5,6 +5,15 @@ function ApplicationTabGroup(Window) {
 	//create app tabs
 	var win1 = new Window(L('home')),
 		win2 = new Window(L('settings'));
+		
+	win1.add(rhok.view.createIssue);
+	win1.add(rhok.view.map.view);
+	
+	var btnCreateIssue = Titanium.UI.createButton({
+	    title:'+'
+	});
+	 
+	win1.rightNavButton = btnCreateIssue;
 	
 	var tab1 = Ti.UI.createTab({
 		title: L('home'),

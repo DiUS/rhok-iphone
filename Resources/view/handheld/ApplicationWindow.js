@@ -6,9 +6,6 @@ function ApplicationWindow(title) {
 		backgroundColor:'white'
 	});
 	
-	self.add(rhok.view.createIssue);
-	self.add(rhok.view.map.view);
-	
 	return self;
 };
 
