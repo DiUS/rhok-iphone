@@ -1,4 +1,4 @@
-tlr.model.issue = (function () {
+rhok.model.issue = (function () {
   var me = {};
   
 
