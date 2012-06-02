@@ -1,3 +1,5 @@
+
+
 function ApplicationWindow(title) {
 	var self = Ti.UI.createWindow({
 		title:title,
@@ -12,6 +14,14 @@ function ApplicationWindow(title) {
 	});
 	self.add(button);
 	
+	var parsebutton = Ti.UI.createButton({
+		height:44,
+		width:200,
+		title:'hit parse',
+		top:80
+	});
+	self.add(parsebutton);
+	
 	button.addEventListener('click', function() {
 		//containingTab attribute must be set by parent tab group on
 		//the window for this work
@@ -19,6 +29,11 @@ function ApplicationWindow(title) {
 			title: L('newWindow'),
 			backgroundColor: 'white'
 		}));
+	});
+	
+	parsebutton.addEventListener('click', function() {
+		
+		var Incident = Parse.Object.extend("Incident");
 	});
 	
 	return self;

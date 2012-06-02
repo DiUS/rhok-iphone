@@ -10,10 +10,14 @@
  *  
  */
 
+// require('parse-1.0.0.min');
+
 //bootstrap and check dependencies
 if (Ti.version < 1.8 ) {
 	alert('Sorry - this application template requires Titanium Mobile SDK 1.8 or later');
 }
+
+var rhok = {};
 
 // This is a single context application with mutliple windows in a stack
 (function() {
@@ -22,7 +26,12 @@ if (Ti.version < 1.8 ) {
 		version = Ti.Platform.version,
 		height = Ti.Platform.displayCaps.platformHeight,
 		width = Ti.Platform.displayCaps.platformWidth;
-	
+		
+	rhok.config = {};
+  	rhok.controller = {};
+  	rhok.model = {};
+  	rhok.view = {};
+
 	var Window = require('view/handheld/ApplicationWindow');
 
 	var ApplicationTabGroup = require('view/common/ApplicationTabGroup');
