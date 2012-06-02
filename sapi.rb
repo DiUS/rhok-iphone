@@ -4,9 +4,10 @@ require 'json'
 endpoint = "http://api.sensis.com.au/ob-20110511/test/search" 
 
 key = "jx3fpbttj8pf68a6ywcnaqpz"
-query = "fencers"
+query = "fencing contractors"
 
-location = "-37.877089,145.165358" 
+#woodend!!
+location = "-37.3568115234,144.5272674561"
 
 url = "#{endpoint}?key=#{key}&query=#{URI.encode(query)}&location=#{URI.encode(location)}"
 
@@ -16,14 +17,9 @@ data = response.body
 
 result = JSON.parse(data)
 
-y = result["results"].collect{ |r| r["primaryContacts"] }
+filtered = result["results"].select{ |a| a["primaryContacts"].any?{ |h| h["type"] == "PHONE" } }
 
-p "*"*30
+name_nums = filtered.collect{ |result| { result["name"] => result["primaryContacts"].select{ |h| h["type"] == "PHONE" }.first["value"] } }
 
-
-nums = []
-
-y.each{ |a| a.each{|h| nums << h["value"] if h.values.include? "PHONE" } }
-
-puts nums
+puts name_nums.sort_by{ |h| h.keys.first }
 
