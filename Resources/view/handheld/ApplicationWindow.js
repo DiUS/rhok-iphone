@@ -13,15 +13,6 @@ function ApplicationWindow(title) {
 		top:20
 	});
 	self.add(button);
-	
-	var parsebutton = Ti.UI.createButton({
-		height:44,
-		width:200,
-		title:'hit parse',
-		top:80
-	});
-	self.add(parsebutton);
-	
 	button.addEventListener('click', function() {
 		//containingTab attribute must be set by parent tab group on
 		//the window for this work
@@ -31,10 +22,17 @@ function ApplicationWindow(title) {
 		}));
 	});
 	
-	parsebutton.addEventListener('click', function() {
-		
-		var Incident = Parse.Object.extend("Incident");
+	var mapview = Titanium.Map.createView({
+    mapType: Titanium.Map.STANDARD_TYPE,
+    region: {latitude:33.74511, longitude:-84.38993, 
+            latitudeDelta:0.01, longitudeDelta:0.01},
+    animate:true,
+    regionFit:true,
+    userLocation:true
+    // annotations:[mountainView]
 	});
+	
+	self.add(mapview);
 	
 	return self;
 };

@@ -37,3 +37,5 @@ var rhok = {};
 	var ApplicationTabGroup = require('view/common/ApplicationTabGroup');
 	new ApplicationTabGroup(Window).open();
 })();
+
+Ti.include("view/handheld/views.js");
