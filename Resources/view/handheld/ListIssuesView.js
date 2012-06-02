@@ -3,7 +3,7 @@ rhok.view.listIssues = function() {
 	});
 
 	var issueList = Ti.UI.createTableView({
-		height : 500
+		height : 370
  	});
 
 	rhok.controller.issueController.loadIssues(issueList);
