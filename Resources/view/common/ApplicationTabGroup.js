@@ -7,7 +7,8 @@ function ApplicationTabGroup(Window) {
 		win2 = new Window(L('settings'));
 		
 	win1.add(rhok.view.createIssue);
-	win1.add(rhok.view.map.view);
+	win1.add(rhok.view.listIssues);
+	win2.add(rhok.view.map.view);
 	
 	var btnCreateIssue = Titanium.UI.createButton({
 	    title:'+'
